@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Imágenes y Títulos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #form-container {
+            margin: 20px;
+        }
+        #content-area {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Añade Títulos e Imágenes</h1>
+    
+    <!-- Formulario para añadir título -->
+    <div id="form-container">
+        <label for="title-content">Añade un título:</label>
+        <input type="text" id="title-content" placeholder="Escribe un título">
+        <br><br>
+        
+        <!-- Formulario para añadir imagen -->
+        <label for="image-url">Añade la URL de una imagen:</label>
+        <input type="text" id="image-url" placeholder="Pega el enlace de una imagen">
+        <br><br>
+
+        <button onclick="addContent()">Añadir</button>
+    </div>
+
+    <!-- Área donde se añadirá el contenido -->
+    <div id="content-area"></div>
+
+    <script>
+        // Función para añadir título e imagen a la página
+        function addContent() {
+            // Obtener el título ingresado por el usuario
+            let titleInput = document.getElementById('title-content').value;
+            
+            // Crear un nuevo encabezado con el título
+            let newTitle = document.createElement('h2');
+            newTitle.textContent = titleInput;
+
+            // Obtener la URL de la imagen ingresada por el usuario
+            let imageUrl = document.getElementById('image-url').value;
+            
+            // Crear un nuevo elemento de imagen
+            let newImage = document.createElement('img');
+            newImage.src = imageUrl;
+            newImage.alt = 'Imagen añadida por el usuario';
+            newImage.style.maxWidth = '100%'; // Ajusta el tamaño de la imagen para que se ajuste a la página
+
+            // Añadir el nuevo título y la imagen al área de contenido
+            document.getElementById('content-area').appendChild(newTitle);
+            document.getElementById('content-area').appendChild(newImage);
+            
+            // Limpiar los campos de entrada
+            document.getElementById('title-content').value = '';
+            document.getElementById('image-url').value = '';
+        }
+    </script>
+
+</body>
+</html>

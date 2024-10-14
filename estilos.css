@@ -1,0 +1,99 @@
+.iconos img{
+height: 30px;
+right: 30px;
+position: relative; 
+left: 1700px;
+ top: 10px;
+  height: 30px;
+}
+.imagen{
+position: relative;
+left: 450px;
+top: 50px;
+}
+nav {
+    background-color: #8beef5;
+    padding: 1rem;
+}
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: #f4f4f4;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 5px;
+}
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Contenedor de la barra de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Formulario de búsqueda */
+#search-form {
+    position: relative;
+    display: flex;
+    width: 600px;
+    max-width: 100%;
+}
+
+/* Estilo del input (barra de búsqueda) */
+#search-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón de búsqueda */
+#search-button {
+    background-color: #FF6600;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Cambia el color cuando el mouse pasa sobre el botón */
+#search-button:hover {
+    background-color: #e65c00;
+}
+
+/* Estilo del icono de lupa (puedes usar FontAwesome) */
+label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 18px;
+}
+
+#search-input {
+    padding-left: 40px; /* Espacio para el ícono */
+}

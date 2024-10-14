@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Informativos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="contenedor">
+        <h1>Materiales Informativos</h1>
+        
+       
+        <input type="text" id="busqueda" placeholder="Buscar material..." onkeyup="filtrarTarjetas()">
+        
+        <div class="grid" id="grid">
+            
+        </div>
+    </section>
+
+    <script>
+        //ACA AGREGAS NOMBRES
+        const nombres = [
+            "Calendario 2024",
+            "Cuadernillo IVE-ILE",
+            "Folleto Casos Críticos",
+            "Folleto Masculinidades",
+            "Folleto IVE ILE",
+            "Recursora de Mesas Locales",
+            "Folleto de Búsquedas",
+            "Folleto de Identidad de Género",
+            "hola",
+            "chura",
+            "martes",
+
+            
+            
+        ];
+
+        
+        const enlaces = [
+            "https://drive.google.com/uc?export=download&id=1UlgF5eS-6PsKmCiru4BZvZSbgTkgeAjQ",
+            "https://ejemplo.com/material2",
+            "https://ejemplo.com/material3",
+            "https://ejemplo.com/material4",
+            
+            "https://ejemplo.com/material500"
+        ];
+
+        
+        const grid = document.getElementById('grid');
+
+        for (let i = 1; i <= 550; i++) {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjeta');
+            
+            
+            const titulo = document.createElement('h2');
+            titulo.innerText = nombres[i - 1] || `Material ${i}`; 
+            tarjeta.appendChild(titulo);
+            
+            const boton = document.createElement('a');
+            boton.innerText = 'Descargar';
+            boton.href = enlaces[i - 1];  
+            boton.classList.add('boton');
+            tarjeta.appendChild(boton);
+            
+          
+            grid.appendChild(tarjeta);
+        }
+
+      
+        function filtrarTarjetas() {
+            const input = document.getElementById('busqueda').value.toLowerCase();
+            const tarjetas = document.querySelectorAll('.tarjeta');
+
+            tarjetas.forEach(tarjeta => {
+                const titulo = tarjeta.querySelector('h2').innerText.toLowerCase();
+                if (titulo.includes(input)) {
+                    tarjeta.style.display = 'block';  
+                } else {
+                    tarjeta.style.display = 'none';  
+                }
+            });
+        }
+    </script>
+</body>
+</html>

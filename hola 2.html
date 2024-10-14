@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Contenido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #form-container {
+            margin: 20px;
+        }
+        #content-area {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Añade Contenido a la Página</h1>
+    
+    <!-- Formulario para añadir texto -->
+    <div id="form-container">
+        <label for="user-content">Escribe algo:</label>
+        <input type="text" id="user-content" placeholder="Añade tu texto aquí">
+        <button onclick="addContent()">Añadir</button>
+    </div>
+
+    <!-- Área donde se añadirá el contenido -->
+    <div id="content-area"></div>
+
+    <script>
+        // Función para añadir contenido al área de la página
+        function addContent() {
+            // Obtiene el valor que el usuario escribió
+            let userInput = document.getElementById('user-content').value;
+            
+            // Crea un nuevo párrafo y le añade el texto ingresado
+            let newParagraph = document.createElement('p');
+            newParagraph.textContent = userInput;
+
+            // Añade el nuevo contenido al área de contenido
+            document.getElementById('content-area').appendChild(newParagraph);
+            
+            // Limpia el campo de texto
+            document.getElementById('user-content').value = '';
+        }
+    </script>
+
+</body>
+</html>
